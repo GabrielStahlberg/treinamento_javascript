@@ -3,11 +3,10 @@ var campos = [
     document.querySelector('#quantidade'),
     document.querySelector('#valor')
 ];
-console.log(campos);
 
 var tbody = document.querySelector('table tbody');
 
-document.querySelector('.form').addEventListener('submit', function(event){
+document.querySelector('.form').addEventListener('submit', function(event) {
     
     // Utilizado para que a página não atualize após a submissão do formulário.
     event.preventDefault();
