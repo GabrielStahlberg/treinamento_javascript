@@ -1,4 +1,4 @@
-class ProxyFactory {
+export class ProxyFactory {
 
   /*
   - O segundo argumento do Proxy é um handler. Um objeto que contém as "traps" do proxy.

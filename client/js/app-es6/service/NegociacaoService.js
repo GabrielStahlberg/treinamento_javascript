@@ -1,4 +1,9 @@
-class NegociacaoService {
+import {HttpService} from './HttpService';
+import {ConnectionFactory} from './ConnectionFactory';
+import {NegociacaoDao} from '../dao/NegociacaoDao';
+import {Negociacao} from '../models/Negociacao';
+
+export class NegociacaoService {
 
   constructor() {
     this._http = new HttpService();
@@ -63,7 +68,7 @@ class NegociacaoService {
   }
 
   cadastra(negociacao) {
-    return connectionFactory
+    return ConnectionFactory
       .getConnection()
       .then(connection => new NegociacaoDao(connection))
       .then(dao => dao.adiciona(negociacao))
@@ -75,7 +80,7 @@ class NegociacaoService {
   }
 
   lista() {
-    return connectionFactory
+    return ConnectionFactory
       .getConnection()
       .then(connection => new NegociacaoDao(connection))
       .then(dao => dao.listaTodos())
@@ -86,7 +91,7 @@ class NegociacaoService {
   }
 
   apaga() {
-    return connectionFactory
+    return ConnectionFactory
       .getConnection()
       .then(connection => new NegociacaoDao(connection))
       .then(dao => dao.apagaTodos())
