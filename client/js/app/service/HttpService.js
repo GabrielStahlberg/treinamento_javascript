@@ -1,5 +1,10 @@
 class HttpService {
   get(url) {
+
+    // return fetch(url)
+    //   .then(res => res.json());
+
+
     return new Promise((resolve, reject) => {
       let xhr = new XMLHttpRequest();
 
